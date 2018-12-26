@@ -1,0 +1,26 @@
+<!-- This is demo on loading text files using ajax-->
+<html>
+
+  <head>
+    <script>
+      function loadDoc() 
+      {
+         var xhttp = new XMLHttpRequest();
+         xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+              document.getElementById("demo").innerHTML =  this.responseText;
+          }
+        };
+        xhttp.open("GET", "data.txt", true);
+        xhttp.send();
+      }
+    </script>
+  </head>
+
+  <body>
+    <h2>Demo on XMLHttpRequest Object</h2>
+    <button type="button" onclick="loadDoc()">Get the Content</button>
+    <div id="demo">
+    </div>
+  </body>
+</html>
