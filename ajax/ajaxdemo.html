@@ -32,16 +32,16 @@
     {
       var i;
       var xmlDoc = xml.responseXML;
-      var table="<table><tr><th>Artist</th><th>Title</th></tr>";
+      var txt="<table><tr><th>Artist</th><th>Title</th></tr>";
       var x = xmlDoc.getElementsByTagName("CD");
       for (i = 0; i <x.length; i++) { 
-        table += "<tr><td>" +
+        txt += "<tr><td>" +
         x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
         "</td><td>" +
         x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
         "</td></tr>";
       }
-      document.getElementById("demo").innerHTML = table+"</table>";
+      document.getElementById("demo").innerHTML = txt+"</table>";
     }
     </script>
   </head>
